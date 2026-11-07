@@ -1,0 +1,66 @@
+/* CultiSync — dark theme ("night pass")
+   Opt-in: set data-theme="dark" on <html>, <body>, or any subtree root.
+   Overrides semantic aliases AND the loam neutrals so components that
+   reference --paper/--stone/--ink directly stay coherent.
+   Saturated ramps (sky/blue/mint/amber/red, health scale) are shared. */
+
+[data-theme="dark"] {
+  /* Loam neutrals, re-graded for night */
+  --paper:     #141A1E;
+  --paper-2:   #0F1418;
+  --white:     #1C242A;
+  --stone-100: #28323A;
+  --stone-200: #33404A;
+  --stone-300: #46545F;
+  --ink-1:     #E8EDF1;
+  --ink-2:     #B4BEC6;
+  --ink-3:     #87929B;
+  --ink-faint: #5F6A73;
+
+  /* Surfaces */
+  --surface-page:    #141A1E;
+  --surface-card:    #1C242A;
+  --surface-sunken:  #0F1418;
+  --surface-inverse: #0B2630;
+
+  /* Text */
+  --text-body:    #E8EDF1;
+  --text-muted:   #B4BEC6;
+  --text-faint:   #87929B;
+  --text-inverse: #EBF4F7;
+  --text-on-accent: #0C181D;
+
+  /* Borders */
+  --border-subtle:  #242E35;
+  --border-default: #33404A;
+  --border-strong:  #46545F;
+
+  /* Accent — brighter cyan for contrast on dark; dark text on top */
+  --accent:       var(--sky-400);
+  --accent-hover: var(--sky-300);
+  --accent-press: var(--sky-500);
+  --accent-soft:  #1B3A47;
+  --accent-text:  var(--sky-300);
+
+  /* Status — brighter mains, deep tonal softs */
+  --success:      var(--mint-500);
+  --success-soft: #1C3224;
+  --success-text: var(--mint-500);  /* 7.8:1 on --success-soft */
+  --info:         var(--blue-400);
+  --info-soft:    #20294A;
+  --info-text:    var(--blue-300);  /* 6.7:1 on --info-soft */
+  --warning:      var(--amber-500);
+  --warning-soft: #3A2F14;
+  --warning-text: #E3B55A;  /* 6.9:1 on --warning-soft */
+  --danger:       var(--red-500);
+  --danger-soft:  #3D1F1A;
+  --danger-text:  #E08A80;  /* 5.8:1 on --danger-soft */
+
+  /* Shadows — deeper on dark */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.30);
+  --shadow-raised: 0 2px 4px rgba(0, 0, 0, 0.40), 0 8px 24px rgba(0, 0, 0, 0.40);
+  --shadow-overlay: 0 4px 12px rgba(0, 0, 0, 0.45), 0 16px 48px rgba(0, 0, 0, 0.55);
+
+  /* Focus */
+  --focus-ring: var(--sky-400);
+}

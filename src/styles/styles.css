@@ -1,0 +1,13 @@
+/* CultiSync — global CSS entry point */
+@import './tokens/fonts.css';
+@import './tokens/colors.css';
+@import './tokens/dark.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/effects.css';
+@import './tokens/base.css';
+@media(max-width:700px) {
+  header > div { flex-wrap:wrap; height:auto !important; min-height:72px; gap:12px !important; padding-top:12px !important; padding-bottom:12px !important; }
+  header nav { order:3; flex-basis:100% !important; }
+  footer > div { flex-wrap:wrap; gap:20px; }
+}

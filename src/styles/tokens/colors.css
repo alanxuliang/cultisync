@@ -1,0 +1,138 @@
+/* CultiSync — color tokens (v3: Sky Cyan primary)
+   Light-first palette tuned for outdoor/sunlight readability:
+   warm paper surfaces, high-contrast ink, a Sky Cyan primary,
+   Horizon Blue for water/moisture, Irrigation Mint for irrigation/healthy,
+   Clay Red for urgency. Dark theme overrides live in tokens/dark.css. */
+
+:root {
+  /* ── Base ramps ─────────────────────────────────────── */
+
+  /* Sky Cyan — primary brand hue (satellite, sky, actions) */
+  --sky-50:  #EBF4F7;
+  --sky-100: #DCEEF4;
+  --sky-200: #B9DDE9;
+  --sky-300: #8FC4D7;
+  --sky-400: #6BB0C9;
+  --sky-500: #4D9DBD;
+  --sky-600: #357F9E;
+  --sky-700: #266379;
+  --sky-800: #1D4C5D;
+  --sky-900: #11333F;
+
+  /* Horizon Blue — water, moisture, informational status */
+  --blue-100: #DDE4F2;
+  --blue-200: #BFCCE7;
+  --blue-300: #9FB2DA;
+  --blue-400: #7A93CB;
+  --blue-500: #5474B9;
+  --blue-600: #3D5BA8;
+  --blue-700: #314A8B;
+  --blue-800: #283A6D;
+  --blue-900: #1D2A4F;
+
+  /* Loam — warm neutrals (paper, borders) */
+  --paper:     #F7F5ED;
+  --paper-2:   #F0EDE2;
+  --white:     #FFFFFF;
+  --stone-100: #E9E6DA;
+  --stone-200: #DBD7C8;
+  --stone-300: #C2BFAF;
+  --ink-1:     #222631;
+  --ink-2:     #4D5462;
+  --ink-3:     #79808E;
+  --ink-faint: #9CA3B0;
+
+  /* Irrigation Mint — pastel greens: irrigation, healthy states */
+  --mint-100: #E3F1E5;
+  --mint-500: #9ECFAC;
+  --mint-600: #74B488;
+  --mint-700: #4E8A62;
+  --mint-800: #3A6B4A;
+
+  /* Harvest Amber — caution, forecast, ripening */
+  --amber-100: #F4E8CE;
+  --amber-500: #C98A1E;
+  --amber-600: #A06E12;
+  --amber-700: #7A5510;
+
+  /* Clay Red — urgency, stress, alerts */
+  --red-100: #F6DEDA;
+  --red-500: #C9554A;
+  --red-600: #B43A2E;
+  --red-700: #92291F;
+
+  /* ── Vegetation-health data ramp (red → cyan, stress → peak) ── */
+  --scale-stress: #B43A2E;
+  --scale-low:    #D98A52;
+  --scale-fair:   #B0BFC6;
+  --scale-good:   #5499B6;
+  --scale-peak:   #1F5D77;
+
+  /* ── NDVI imagery ramp ───────────────────────────────────
+     The colours the app paints onto Sentinel-2 NDVI imagery
+     (supabase/functions/field-data/imagery.js colorBlend stops
+     -1, 0, 0.2, 0.4, 0.6, 0.8, 1). Legends for imagery use these;
+     the --scale-* ramp above stays the qualitative health legend. */
+  --ndvi-water:  #295285;
+  --ndvi-soil:   #99663D;
+  --ndvi-sparse: #E0CC8A;
+  --ndvi-low:    #A8C263;
+  --ndvi-mid:    #599C47;
+  --ndvi-high:   #296E38;
+  --ndvi-dense:  #0F4026;
+
+  /* NDVI change imagery (later minus earlier), as rendered server-side. */
+  --ndvi-change-decrease: #B05726;
+  --ndvi-change-neutral:  #F2F0E0;
+  --ndvi-change-increase: #297A7A;
+
+  /* ── Semantic aliases ───────────────────────────────── */
+
+  /* Surfaces */
+  --surface-page:    var(--paper);
+  --surface-card:    var(--white);
+  --surface-sunken:  var(--paper-2);
+  --surface-inverse: var(--sky-900);
+
+  /* Text */
+  --text-body:    var(--ink-1);
+  --text-muted:   var(--ink-2);
+  --text-faint:   var(--ink-3);
+  --text-inverse: #EBF4F7;
+  --text-on-accent: #FFFFFF;
+
+  /* Borders */
+  --border-subtle: var(--stone-100);
+  --border-default: var(--stone-200);
+  --border-strong: var(--stone-300);
+
+  /* Accent (primary actions) */
+  --accent:       var(--sky-600);
+  --accent-hover: var(--sky-700);
+  --accent-press: var(--sky-800);
+  --accent-soft:  var(--sky-100);
+  --accent-text:  var(--sky-700);
+
+  /* Status */
+  --success:      var(--mint-600);
+  --success-soft: var(--mint-100);
+  --success-text: var(--mint-800);  /* 5.3:1 on --success-soft */
+  --info:         var(--blue-600);
+  --info-soft:    var(--blue-100);
+  --info-text:    var(--blue-700);  /* 6.6:1 on --info-soft */
+  --warning:      var(--amber-600);
+  --warning-soft: var(--amber-100);
+  --warning-text: var(--amber-700);  /* 5.5:1 on --warning-soft */
+  --danger:       var(--red-600);
+  --danger-soft:  var(--red-100);
+  --danger-text:  var(--red-700);  /* 6.4:1 on --danger-soft */
+
+  /* Charts (app SVG): measured series in the brand hue, comparisons muted */
+  --chart-primary:   var(--sky-600);
+  --chart-secondary: var(--ink-3);
+  --chart-rain:      var(--blue-600);
+  --chart-threshold: var(--amber-600);
+
+  /* Focus */
+  --focus-ring: var(--sky-500);
+}

@@ -1,0 +1,31 @@
+name: Beta checks
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm audit --omit=dev --audit-level=high
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Throwaway PostgreSQL with PostGIS on port 55433
+        run: |
+          mkdir -p /etc/postgresql-common/createcluster.d
+          echo "create_main_cluster = false" > /etc/postgresql-common/createcluster.d/00-ci.conf
+          apt-get update -qq
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -qq postgresql postgresql-contrib > /dev/null
+          PGV=$(ls /usr/lib/postgresql | sort -V | tail -1)
+          DEBIAN_FRONTEND=noninteractive apt-get install -y -qq "postgresql-$PGV-postgis-3" > /dev/null
+          pg_createcluster "$PGV" ci --port 55433 -- --auth=trust
+          pg_ctlcluster "$PGV" ci start
+      - name: Migrations, security test, account cap and its lock
+        run: bash supabase/tests/run_db_tests.sh

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.playwright-mcp/
+*.local
+.env
+.env.*
+!.env.example
+supabase/.temp/
+.wrangler/
+.claude/scheduled_tasks.lock
+.dev.vars
+.superpowers/

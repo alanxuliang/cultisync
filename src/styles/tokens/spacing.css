@@ -1,0 +1,24 @@
+/* CultiSync — spacing tokens (4px base grid) */
+
+:root {
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Layout */
+  --container-web: 1120px;   /* marketing site max width */
+  --container-app: 390px;    /* mobile app design width */
+  --gutter-web: 24px;
+  --gutter-app: 16px;
+
+  /* Touch */
+  --hit-target: 48px;        /* min touch target — field use, gloves on */
+}

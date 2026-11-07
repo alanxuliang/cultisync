@@ -1,0 +1,27 @@
+{
+  "place": "Oakville, Napa Valley, California",
+  "aerial": {
+    "source": "USDA NAIP",
+    "date": "2022-05-23",
+    "resolutionM": 0.6
+  },
+  "sentinel": {
+    "source": "Copernicus Sentinel-2 L2A",
+    "scene": "S2B_10SEH_20260918_0_L2A",
+    "date": "2026-09-18",
+    "resolutionM": 10,
+    "attribution": "Contains modified Copernicus Sentinel data 2026"
+  },
+  "hero": {
+    "widthM": 2160,
+    "heightM": 1800,
+    "ndviMedian": 0.45
+  },
+  "block": {
+    "source": "DWR / Land IQ 2023 crop mapping",
+    "id": "2801948",
+    "areaHa": 6.0,
+    "pixels": 601,
+    "ndviMedian": 0.31
+  }
+}
