@@ -22,7 +22,7 @@ boundaries are supplied by the user or taken from the public DWR crop map; they 
 | October 2026 | Remove the illustrative demo, plan gating, AI chat, simulator and pricing page; the Water tab shows observations only (ET₀, rainfall, soil water storage) Done. |
 | November 2026 | Automated deploys; a keepalive three times a week with capacity warnings; a cap of 100 accounts to stay within free quotas. Done. |
 | December 2026 – January 2027 | A printable field evidence report with a SHA-256 hash of the underlying data; a per-field data download; KML boundary import. Done (October 2026). |
-| End of January 2027 | Source code published in a new public repository |
+| End of January 2027 | Source code published in a new public repository. Done (November 7, 2026): github.com/alanxuliang/cultisync. |
 | January – February 2027 | A methodology page and a validation note on how often usable clear-sky observations occur through the year; an open dataset and a demo that works without an account, both on Hugging Face |
 | February – March 2027 | Self-hosted California terrain tiles, if a feasibility check passes |
 | From April 2027 | Maintenance: bug fixes and keeping data sources working |
